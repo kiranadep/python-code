@@ -15,20 +15,20 @@ for i in range(1, n):
     WT[i] = WT[i-1]+BT[i-1]
 
 
-WT.insert(n,0)
+WT.insert(n+1, 0)
+WT.pop(4)
+print(WT)
 TAT = BT.copy()
 print("BT\tWT\tTAT")
-for i in range(0,n):
+for i in range(0, n):
 
     TAT[i] = WT[i]+BT[i]
     print(BT[i], "\t", WT[i], "\t", TAT[i])
-   
-for i in range(n):
-    w += WT[i]
-    a += TAT[i]
+w = sum(WT)
+a = sum(TAT)
 
-print(a)
+
 w = w / n
 a = a / n
 
-print("The Average of WT is :", w, "\nThe Average of TAT is :", a)
+print("The Average of WT is :", w, "ms\nThe Average of TAT is :", a, "ms")
